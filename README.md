@@ -6,8 +6,7 @@ A jaw-dropping developer portfolio packed with interactive 3D animations, butter
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/kshitizkannojia/My-Portfolio)
 
-<!-- Add your own portfolio screenshot here once the site is live -->
-<!-- ![Portfolio Preview](screenshot.png) -->
+![Portfolio Preview](screenshot.png)
 
 ## ✨ Features
 
