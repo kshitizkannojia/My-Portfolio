@@ -438,28 +438,15 @@ const projects: Project[] = [
             pressing each keycap reveals a skill in a goofy way. It&apos;s like
             typing, but make it art.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/landing.png`,
-              `${BASE_PATH}/portfolio/skills.png`,
-            ]}
-          />
           <TypographyH3 className="my-4 ">Space Theme</TypographyH3>
           <p className="font-mono mb-2">
             Dark background + floating particles = out-of-this-world cool.
           </p>
-          <SlideShow images={[`${BASE_PATH}/portfolio/navbar.png`]} />
           <TypographyH3 className="my-4 mt-8">Projects</TypographyH3>
 
           <p className="font-mono mb-2">
             My top personal and freelance projects — no filler, all killer.
           </p>
-          <SlideShow
-            images={[
-              `${BASE_PATH}/portfolio/projects.png`,
-              `${BASE_PATH}/portfolio/project.png`,
-            ]}
-          />
           <p className="font-mono mb-2 mt-8 text-center">
             This site&apos;s not just a portfolio — it&apos;s a whole vibe.
           </p>
