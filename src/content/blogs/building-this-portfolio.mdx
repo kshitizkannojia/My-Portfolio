@@ -1,0 +1,57 @@
+---
+title: "How I Built This 3D Portfolio (And Why It's Overkill)"
+publishedAt: "2026-07-14"
+summary: "The tech stack, design decisions, and lessons behind building a portfolio with a 3D keyboard, GSAP animations, and way too many particles."
+author: "Kshitiz Kannojia"
+tags: ["portfolio", "nextjs", "3d", "tech"]
+---
+
+# How I Built This 3D Portfolio
+
+Most developer portfolios are a hero section, a project grid, and a contact form. This one has a fully interactive 3D keyboard where each keycap represents a skill. Is it necessary? No. Is it cool? I think so.
+
+Here's the tech behind it and what I learned building it.
+
+## The Stack
+
+| Layer | What I Used |
+|---|---|
+| Framework | Next.js with TypeScript |
+| Styling | Tailwind CSS + Shadcn UI |
+| Animation | GSAP + Framer Motion |
+| 3D | Spline Runtime |
+| Email | Resend |
+| Smooth Scroll | Lenis |
+| Deployment | Vercel |
+
+## The 3D Keyboard
+
+The headline feature is a Spline-powered 3D keyboard that renders in the browser. Each keycap has a tech logo on it — React, TypeScript, Docker, Firebase, etc. When you hover or click a key, it reveals the skill name and a short description.
+
+The keyboard is authored in Spline's editor, exported as a `.spline` file, and loaded at runtime via `@splinetool/react-spline`. The tricky part is performance — a 3D scene running in WebGL alongside scroll animations and particle effects can crush a low-end device.
+
+## Performance Without Sacrificing the Cool Stuff
+
+I built a `usePerfProfile` hook that checks for the user's `prefers-reduced-motion` setting and Data Saver mode. If you're on a device that can handle it, you get the full experience — 3D keyboard, floating particles, elastic cursor, the works. If not, it gracefully falls back to static content.
+
+The 3D scene is the default experience because that's the whole point. But users can toggle it off from the menu if they prefer.
+
+## Animations
+
+GSAP handles the scroll-triggered reveals and section transitions. Framer Motion powers the interactive hover states, page transitions, and the project cards. Lenis provides the smooth scroll feel.
+
+The particle background is a simple canvas animation — random dots drifting across a dark background. It's subtle, but it sells the space theme.
+
+## What I'd Do Differently
+
+**Optimize images earlier.** I didn't think about image sizes until the Lighthouse score told me to. Serving properly sized WebP images from the start would've saved time.
+
+**Write blog posts from day one.** Adding the blog section last meant I had to retrofit MDX support. If I'd planned for it early, the content pipeline would've been cleaner.
+
+**Test on more devices.** The 3D scene looks great on a laptop with a dedicated GPU. On a 2019 budget Android phone? Less great. The perf profiling helps, but I should've tested on real low-end hardware sooner.
+
+## The Result
+
+A portfolio that stands out, runs fast on capable devices, and degrades gracefully on everything else. It's been a fun project to build and iterate on — and now it has a blog section, which means I'm legally allowed to call myself a "content creator."
+
+If you're building your own portfolio, my advice: make it weird. The internet has enough minimalist white-background-with-Helvetica sites. Build something that makes you smile when you open it.

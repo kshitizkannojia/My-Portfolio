@@ -1,0 +1,55 @@
+---
+title: "From Hello World to Production Apps — My Dev Journey"
+publishedAt: "2026-07-13"
+summary: "How a CSE student in Bengaluru went from writing basic C programs to shipping SaaS apps, AI pipelines, and OCR scanners."
+author: "Kshitiz Kannojia"
+tags: ["journey", "career", "learning"]
+---
+
+# From Hello World to Production Apps
+
+Two years ago, I was writing C programs that printed star patterns. Today I'm building multi-tenant SaaS apps with row-level security and AI-powered email automation systems. Here's how that happened.
+
+## The Starting Point
+
+I started my B.E. in Computer Science at M.S. Engineering College, Bengaluru in 2022. Like most CSE students, my first real exposure to programming was C and C++. I could sort arrays and reverse linked lists, but I had no idea how actual software got built.
+
+The gap between "data structures & algorithms" and "a real app people use" felt enormous. Turns out, the bridge is just building things.
+
+## The First Real Project — TaxiBill
+
+My first serious project was TaxiBill, a multi-tenant SaaS PWA for taxi companies. It forced me to learn things no textbook covers: Row Level Security in Postgres, magic-link OTP authentication, Content Security Policy headers, service workers for offline support.
+
+I picked React with TypeScript and Vite for the frontend, Supabase for the backend. Every decision felt like a gamble — will this scale? Is this the right pattern? But shipping something imperfect taught me more than planning something perfect ever would.
+
+## Going Full Stack with AI — Internship & Job Hunter
+
+Then I got ambitious. I built an AI-powered job outreach system that discovers companies via Apollo.io, generates personalized cold emails with Groq AI (Llama 3.3 70B), and sends them through Gmail OAuth2 with open tracking and auto follow-ups.
+
+This project pushed me into async architecture, Server-Sent Events, email verification pipelines, and rate limiting. The backend was FastAPI + PostgreSQL, the frontend was React. It was the first time I felt like I was building something that could genuinely save people hours of manual work.
+
+## Internships — Where Theory Meets Reality
+
+### MindMatrix (Jan–Mar 2026)
+
+My first internship was in Android development with Generative AI. I built apps using Kotlin and Jetpack Compose, integrated Firebase, and explored Google AI Studio. The biggest lesson: production code has constraints that side projects don't — deadlines, code reviews, and other people's expectations.
+
+### Japfa Comfeed India (Apr–Jun 2026)
+
+At Japfa, I built an OCR invoice scanner in Flutter that cut data entry from 7 minutes to under 30 seconds. This was my introduction to mobile development at scale — offline-first SQLite, ML Kit for OCR, and a CI pipeline that built both Android APKs and iOS compile-verification on every tagged release.
+
+Working with real GST invoices from warehouse workers taught me that the hardest part of software isn't the code — it's understanding how people actually use it.
+
+## What I Learned
+
+A few things that textbooks won't teach you:
+
+**Ship early.** My first version of TaxiBill was embarrassing. But it worked, and everything I built after was an iteration on something real.
+
+**Pick boring tech for important things.** Postgres with RLS is not exciting. It's also the reason my multi-tenant app doesn't leak data between companies.
+
+**Build for yourself first.** The Job Hunter project started because I actually needed to automate outreach. The best projects solve your own problems.
+
+## What's Next
+
+I'm in my final year now. I want to go deeper into system design, explore more AI/ML integrations, and keep shipping things that solve real problems. If you've read this far, thanks — and if you're a fellow student wondering where to start, just build something. Anything. The rest follows.
